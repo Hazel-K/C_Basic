@@ -1,0 +1,258 @@
+/*/	1. 세 수를 입력받아 제일 큰 수를 출력
+
+	int iNum1 = 0, iNum2 = 0, iNum3 = 0;
+	printf("세 수 입력 : ");
+	scanf("%d %d %d", &iNum1, &iNum2, &iNum3);
+	if ((iNum1 > iNum2) && (iNum1 > iNum3))
+	{
+		printf("제일 큰 수는 %d입니다.\n", iNum1);
+	}
+	else if ((iNum2 > iNum1) && (iNum2 > iNum3))
+	{
+		printf("제일 큰 수는 %d입니다.\n", iNum2);
+	}
+	else if ((iNum3 > iNum1) && (iNum3 > iNum2))
+	{
+		printf("제일 큰 수는 %d입니다.\n", iNum3);
+	}
+
+//*/
+/*/	2. 1 부터 100까지 모든 수를 출력하고 10의 배수는 숫자대신 "!!!" 출력
+//	ex )7 8 9 !!! 11
+
+	int i = 0;
+	for (i = 1; i < 101; i++)
+	{
+		if (i % 10 == 0)
+		{
+			printf("!!!\t");
+		}
+		else
+		{
+			printf("%d\t", i);
+		}
+	}
+
+//*/
+/*/	3. 1 부터 100까지 모든 수를 거꾸로 출력
+
+	int i = 0;
+	for (i = 100; i > 0; i--)
+	{
+		printf("%d\n", i);
+	}
+
+//*/
+/*/	4. 1 부터 100까지 모든 수의 합을 구하여 그 합을 출력 (while 구문 사용)
+
+	int i =0, iSum = 0;
+	while (i < 100)
+	{
+		i++;
+		iSum += i;
+	}
+	printf("%d\n", iSum);
+
+//*/
+/*/	5. 1 부터 100까지 모든 수의 합을 구하여 그 합을 출력 (for 구문 사용)
+
+	int i = 0, iSum = 0;
+	for (i = 1; i < 101; i++)
+	{
+		iSum += i;
+	}
+	printf("%d\n", iSum);
+
+//*/
+/*/	6. scanf를 사용하여 정수를 두개 입력받고 그 두 수를 포함한
+//	두 수 사이의 모든 수의 합을 구하여 출력
+
+	int iNum1 = 0, iNum2 = 0, iSum1 = 0, iSum2 = 0;
+	printf("두 수 입력 : ");
+	scanf("%d %d", &iNum1, &iNum2);
+	if (iNum1 < iNum2)
+	{
+		while (iNum1 < iNum2)
+		{
+			iNum1++;
+			iSum1 += iNum1;
+		}
+		printf("사이값 포함 두 수의 합 : %d\n", iSum1);
+	}
+	else
+	{
+		while (iNum2 < iNum1)
+		{
+			iNum2++;
+			iSum2 += iNum2;
+		}
+		printf("사이값 포함 두 수의 합 : %d\n", iSum2);
+	}
+
+//*/
+/*/	7. 1 부터 100까지의 수 중에서 짝수만 출력
+	
+	int i = 0;
+	for (i = 1; i < 101; i++)
+	{
+		if (i % 2 == 0)
+		{
+			printf("%d\t", i);
+		}
+	}
+
+//*/
+/*/	8. 1 부터 100까지의 수 중에서 홀수만 출력
+
+	int i = 0;
+	for (i = 1; i < 101; i++)
+	{
+		if (i % 2 == 0)
+		{
+			printf("%d\t", i - 1);
+		}
+	}
+
+//*/
+/*/	9. 1 부터 500까지의 수 중에서 짝수의 개수와 홀수의 개수를 구하여 그 개수를 출력
+
+	int i = 0, j = 0, k = 0;
+	for (i = 1; i < 501; i++)
+	{
+		if (i % 2 == 0)
+		{
+			j++;
+		}
+		else
+		{
+			k++;
+		}
+	}
+	printf("짝수의 개수 : %d\n", j);
+	printf("홀수의 개수 : %d\n", k);
+
+//*/
+/*/	10. 1 부터 100까지의 수 중에서 3의 배수인 수만 출력
+
+	int i = 0;
+	for (i = 1; i < 101; i++)
+	{
+		if (i % 3 == 0)
+		{
+			printf("%d\t", i);
+		}
+	}
+
+//*/
+/*/	11. 1 부터 100까지의 수 중에서 3의 배수인 수를
+//	사용자가 입력한 숫자만큼 출력(ex 입력 : 5 -> 3, 6, 9, 12, 15 출력)
+
+	int i = 0, j = 0;
+	printf("정수 입력 : ");
+	scanf("%d", &j);
+	for (i = 1; i <= (j*3); i++)
+	{
+		if (i % 3 == 0)
+		{
+			printf("%d\t", i);
+		}
+	}
+
+//*/
+/*/	12. 1 부터 100까지의 수 중에서 3의 배수의 합을 구하고 출력
+
+	int i = 0, iSum = 0;
+	for (i = 1; i < 101; i++)
+	{
+		if (i % 3 == 0)
+		{
+			iSum += i;
+		}
+	}
+	printf("%d\n", iSum);
+
+//*/
+/*/	13. 아래 동작을 반복하는 코드 제작.
+//	사용자에게 문자 하나를 입력받고 해당 문자를 16진수로 화면에 출력.
+//	사용자가 x 를 입력하면 프로그램 종료.
+
+	int i = 0;
+	do
+	{	
+	printf("문자 입력(x 입력 시 종료) : ");
+	scanf("%s", &i);
+	printf("%x\n", i);
+	} while (i != 'x');
+
+//*/
+/*/	14. 사용자에게 점수를 입력받고, 0 ~ 100 외의 입력이면 Error 출력,
+//	점수가 90점 이상이라면 화면에 'A' 출력, 80점 이상이라면 'B' 출력,
+//	70점 이상이라면 'C' 출력, 70점 미만이라면 'D' 출력 (if문으로)
+
+	int iScore = 0;
+	printf("점수 입력 : ");
+	scanf_s("%d", &iScore);
+	if (iScore < 0 || iScore > 100)
+	{
+		printf("Error"); 
+	}
+	else if (iScore >= 90)
+	{
+		printf("A"); 
+	}
+	else if (iScore >= 80)
+	{
+		printf("B"); 
+	}
+	else if (iScore >= 70)
+	{
+		printf("C");
+	}
+	else if (iScore < 70)
+	{
+		printf("D"); 
+	}
+
+//*/
+/*/	15. 위 문제를 switch문으로 바꾸기
+
+	int iScore = 0;
+	printf("점수 입력 : ");
+	scanf_s("%d", &iScore);
+
+	switch (iScore / 10)
+	{
+	case 10: if (iScore % 10 > 0)
+	{
+		printf("Error\n");
+	}
+			 else 
+	{
+		printf("A\n");
+	}
+		break;
+	case 9: printf("A\n");
+		break;
+	case 8: printf("B\n");
+		break;
+	case 7: printf("C\n");
+		break;
+	case 6:
+	case 5:
+	case 4:
+	case 3:
+	case 2:
+	case 1:
+	case 0: if (iScore % 10 == 0)
+	{
+		printf("D\n");
+	}
+			else
+	{
+		printf("Error\n");
+	}
+		break;
+	default: printf("Error\n");
+	}
+
+//*/
